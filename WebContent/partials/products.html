@@ -3,6 +3,7 @@
 <div>
   <ul>
     <li ng-repeat="instrument in instruments">
+      <span><img class="thumb" ng-src="{{instrument.imageUrl}}"></span>
       <span>{{instrument.name}}</span>
       <p>{{instrument.snippet}}</p>
     </li>
