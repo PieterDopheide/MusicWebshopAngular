@@ -6,6 +6,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class Product {
 	
+	@XmlElement // because id has a get method but not a set method the default is to treat it as an unmapped property
 	private String id;
 	private String name;
 	private String snippet;
