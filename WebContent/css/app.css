@@ -1,5 +1,9 @@
 /* app css stylesheet */
 
+body { 
+    padding-top: 65px; 
+}
+
 .thumb {
   float: left;
   margin: -0.5em 1em 1.5em 0;

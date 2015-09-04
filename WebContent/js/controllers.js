@@ -11,3 +11,11 @@ myAppControllers.controller('InstrumentListCtrl', function ($scope, $http) {
 	
 //	$scope.orderProp = 'age';
 });
+
+// Doesn't work yet!
+myAppControllers.controller('HeaderController', function ($scope, $location) {
+//	alert($location.path());
+	$scope.isActive = function (viewLocation) {
+		return viewLocation === $location.path();
+	};
+});
