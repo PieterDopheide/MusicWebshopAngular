@@ -27,7 +27,7 @@ public class ProductResource {
 	}
 	
 	@GET
-	@Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+	@Produces({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
 	public Product getProduct() {
 		Product product = ProductDao.instance.getModel().get(id);
 		
@@ -39,7 +39,7 @@ public class ProductResource {
 	}
 	
 	@GET
-	@Produces(MediaType.APPLICATION_XML)
+	@Produces(MediaType.TEXT_XML)
 	public Product getProductHTML() {
 		Product product = ProductDao.instance.getModel().get(id);
 		

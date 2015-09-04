@@ -32,13 +32,13 @@ public class ProductsResource {
 		return products;
 	}
 	
-//	@GET
-//	@Produces({ MediaType.TEXT_XML, MediaType.APPLICATION_JSON })
-//	public List<Product> getProducts() {
-//		List<Product> products = new ArrayList<Product>();
-//		products.addAll(ProductDao.instance.getModel().values());
-//		return products;
-//	}
+	@GET
+	@Produces({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
+	public List<Product> getProducts() {
+		List<Product> products = new ArrayList<Product>();
+		products.addAll(ProductDao.instance.getModel().values());
+		return products;
+	}
 	
 	@GET
 	@Path("count")

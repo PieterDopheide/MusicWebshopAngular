@@ -12,6 +12,7 @@ myAppControllers.controller('HeaderController', function ($scope, $location) {
 
 myAppControllers.controller('ProductListCtrl', function ($scope, $http) {
 	$http.get('instruments/instruments.json').success(function(data) {
+//	$http.getJSONP('http://localhost:8080/MusicWebshopAngular/rest/products/').success(function(data) {
 		$scope.products = data;
 	});
 	
