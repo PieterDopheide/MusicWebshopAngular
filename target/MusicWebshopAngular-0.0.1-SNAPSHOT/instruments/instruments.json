@@ -1,0 +1,23 @@
+[
+    {
+        "age": 0, 
+        "id": "guitar", 
+        "imageUrl": "img/instruments/guitar.jpg", 
+        "name": "Guitar", 
+        "snippet": "A very standard guitar, anyone can play it."
+    }, 
+    {
+        "age": 1, 
+        "id": "saxophone", 
+        "imageUrl": "img/instruments/saxophone.jpg", 
+        "name": "Saxophone", 
+        "snippet": "Excellent for playing smooth jazz."
+    }, 
+    {
+        "age": 2, 
+        "id": "piano", 
+        "imageUrl": "img/instruments/piano.jpg", 
+        "name": "Piano", 
+        "snippet": "One of a kind piano!"
+    }
+]
