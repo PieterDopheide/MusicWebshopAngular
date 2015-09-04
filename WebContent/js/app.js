@@ -11,7 +11,7 @@ myApp.config(['$routeProvider', function($routeProvider) {
 	$routeProvider.
 		when('/products', {
 			templateUrl: 'partials/products.html',
-			controller: 'InstrumentListCtrl'
+			controller: 'ProductListCtrl'
 		}).
 		when('/products/:productId', {
 	        templateUrl: 'partials/product-detail.html',

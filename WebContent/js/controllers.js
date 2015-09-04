@@ -10,9 +10,9 @@ myAppControllers.controller('HeaderController', function ($scope, $location) {
 	};
 });
 
-myAppControllers.controller('InstrumentListCtrl', function ($scope, $http) {
+myAppControllers.controller('ProductListCtrl', function ($scope, $http) {
 	$http.get('instruments/instruments.json').success(function(data) {
-		$scope.instruments = data;
+		$scope.products = data;
 	});
 	
 //	$scope.orderProp = 'age';
