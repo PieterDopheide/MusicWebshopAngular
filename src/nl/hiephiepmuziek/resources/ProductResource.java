@@ -50,16 +50,16 @@ public class ProductResource {
 		return product;
 	}
 	
-	private Response getResponse(Product product) {
-		Response res;
-		
-		if(ProductDao.instance.getModel().containsKey(product.getId())) {
-			res = Response.noContent().build();
-		} else {
-			res = Response.created(uriInfo.getAbsolutePath()).build();
-		}
-		
-		return res;
-	}
+//	private Response getResponse(Product product) {
+//		Response res;
+//		
+//		if(ProductDao.instance.getModel().containsKey(product.getId())) {
+//			res = Response.noContent().build();
+//		} else {
+//			res = Response.created(uriInfo.getAbsolutePath()).build();
+//		}
+//		
+//		return res;
+//	}
 
 }
