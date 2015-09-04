@@ -13,6 +13,10 @@ myApp.config(['$routeProvider', function($routeProvider) {
 			templateUrl: 'partials/products.html',
 			controller: 'InstrumentListCtrl'
 		}).
+		when('/products/:productId', {
+	        templateUrl: 'partials/product-detail.html',
+	        controller: 'ProductDetailCtrl'
+	    }).
 		otherwise({
 			templateUrl: 'partials/home.html'
 //			redirectTo: ''
