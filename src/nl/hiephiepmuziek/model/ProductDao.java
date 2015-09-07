@@ -26,7 +26,7 @@ public enum ProductDao {
             DataSource ds = (DataSource) envContext.lookup("jdbc/hiephiepmuziek");
             db = ds.getConnection();
         	
-            PreparedStatement st = db.prepareStatement("SELECT id, name, snippet from products");
+            PreparedStatement st = db.prepareStatement("SELECT id, name, snippet FROM products");
             ResultSet rs = st.executeQuery();
             
             while (rs.next()) {
@@ -34,16 +34,16 @@ public enum ProductDao {
                 products.put(e.getId(), e);
             }
             
-        } catch (SQLException sqle){} catch (NamingException e1) {
-			e1.printStackTrace();
+        } catch (SQLException sqle){
+        	sqle.printStackTrace();
+        } catch (NamingException ne) {
+			ne.printStackTrace();
 		} finally {
-        	if (db != null) {
-        		try {
-					db.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-        	}
+       		try {
+				db.close();
+			} catch (SQLException sqle) {
+				sqle.printStackTrace();
+			}
         }
 	}
 	
