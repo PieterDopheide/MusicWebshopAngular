@@ -9,11 +9,11 @@ public enum ProductDao {
 	private Map<String, Product> contentProvider = new HashMap<>();
 	
 	private ProductDao() {
-		Product product = new Product("guitar", "Guitar", "A simple guitar.");
+		Product product = new Product(0, "Guitar", "A simple guitar.");
 		contentProvider.put("guitar", product);
-		product = new Product("saxophone", "Saxophone", "Excellent for playing jazz!");
+		product = new Product(1, "Saxophone", "Excellent for playing jazz!");
 		contentProvider.put("saxophone", product);
-		product = new Product("piano", "Piano", "A very expensive piano.");
+		product = new Product(2, "Piano", "A very expensive piano.");
 		contentProvider.put("piano", product);
 	}
 	

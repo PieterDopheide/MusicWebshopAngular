@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+
+  <!-- <Context crossContext="true"> -->
+  
+  <WatchedResource>WEB-INF/web.xml</WatchedResource>
+
+  <Resource name="jdbc/hiephiepmuziek"
+            auth="Container"
+            driverClassName="com.mysql.jdbc.Driver"
+            type="javax.sql.DataSource"
+            username="root"
+            password="kaas"
+            url="jdbc:mysql://localhost:3306/hiephiepmuziek"/>
+</Context>
