@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
@@ -39,9 +40,9 @@ public class ProductsResource {
 		return String.valueOf(count);
 	}
 	
-//	@Path("{product}")
-//	public ProductResource getProduct(@PathParam("product") String id) {
-//		return new ProductResource(uriInfo, request, id);
-//	}
+	@Path("{productId}")
+	public ProductResource getProduct(@PathParam("productId") int id) {
+		return new ProductResource(uriInfo, request, id);
+	}
 
 }

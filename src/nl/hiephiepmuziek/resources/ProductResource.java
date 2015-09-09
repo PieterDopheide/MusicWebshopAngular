@@ -23,6 +23,10 @@ public class ProductResource {
 		this.uriInfo = uriInfo;
 		this.request = request;
 		this.id = id;
+		
+		System.out.println("Uri: " + uriInfo);
+		System.out.println("Request: " + request);
+		System.out.println("ID: " + id);
 	}
 	
 	@GET
