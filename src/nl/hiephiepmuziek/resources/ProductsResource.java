@@ -40,11 +40,6 @@ public class ProductsResource {
 		return String.valueOf(count);
 	}
 	
-//	@Path("{productId}")
-//	public ProductResource getProduct(@PathParam("productId") int id) {
-//		return new ProductResource(uriInfo, request, id);
-//	}
-	
 	@GET
 	@Path("{productId}")
 	@Produces(MediaType.APPLICATION_JSON)
