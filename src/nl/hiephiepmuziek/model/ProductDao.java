@@ -26,7 +26,7 @@ public enum ProductDao {
             DataSource ds = (DataSource) envContext.lookup("jdbc/hiephiepmuziek");
             db = ds.getConnection();
         	
-            PreparedStatement st = db.prepareStatement("SELECT id, name, snippet FROM products");
+            PreparedStatement st = db.prepareStatement("SELECT * FROM products");
             ResultSet rs = st.executeQuery();
             
             while (rs.next()) {
@@ -62,6 +62,7 @@ public enum ProductDao {
         product.setId(rs.getInt("id"));
         product.setName(rs.getString("name"));
         product.setSnippet(rs.getString("snippet"));
+        product.setImageurl(rs.getString("imageurl"));
         return product;
     }
 

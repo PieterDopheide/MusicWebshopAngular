@@ -7,11 +7,12 @@ import javax.xml.bind.annotation.XmlRootElement;
 //@Entity
 public class Product {
 	
-	@XmlElement // because id has a get method but not a set method the default is to treat it as an unmapped property
+	@XmlElement // Because id has a get method but not a set method the default is to treat it as an unmapped property
 //	@Id
 	private int id;
 	private String name;
 	private String snippet;
+	private String imageurl;
 	
 	public Product() {}
 	
@@ -43,6 +44,14 @@ public class Product {
 
 	public void setId(int i) {
 		this.id = i;
+	}
+
+	public String getImageurl() {
+		return imageurl;
+	}
+
+	public void setImageurl(String imageurl) {
+		this.imageurl = imageurl;
 	}
 
 }

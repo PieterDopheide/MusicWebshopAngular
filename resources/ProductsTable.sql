@@ -5,5 +5,6 @@ create table products(
 	price int(11),
 	stock int(11),
 	category varchar(32),
+	imageurl varchar(100),
 	primary key (id)
 );
