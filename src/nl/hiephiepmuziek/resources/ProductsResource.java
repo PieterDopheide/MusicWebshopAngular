@@ -40,9 +40,23 @@ public class ProductsResource {
 		return String.valueOf(count);
 	}
 	
+//	@Path("{productId}")
+//	public ProductResource getProduct(@PathParam("productId") int id) {
+//		return new ProductResource(uriInfo, request, id);
+//	}
+	
+	@GET
 	@Path("{productId}")
-	public ProductResource getProduct(@PathParam("productId") int id) {
-		return new ProductResource(uriInfo, request, id);
+	@Produces(MediaType.APPLICATION_JSON)
+	public Product getProduct(@PathParam("productId") int id) {
+		Product product = null;
+		product = ProductDao.instance.getModel().get(id);
+		
+		if (product == null) {
+			throw new RuntimeException("Get: Product with " + id + " not found");
+		}
+		
+		return product;
 	}
 
 }

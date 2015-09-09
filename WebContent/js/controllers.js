@@ -13,13 +13,15 @@ myAppControllers.controller('HeaderController', function ($scope, $location) {
 myAppControllers.controller('ProductListCtrl', function ($scope, $http) {
 	$http.get('/MusicWebshopAngular/rest/products/').success(function(data) {
 		$scope.products = data;
-		console.log('succes');
+		console.log('succes list');
 		console.log(data);
 	});
 });
 
 myAppControllers.controller('ProductDetailCtrl', function ($scope, $routeParams, $http) {
-	$http.get('/MusicWebshopAngular/rest/products/' + $routeParams.productId).succes(function(data) {
+	$http.get('/MusicWebshopAngular/rest/products/' + $routeParams.productId).success(function(data) {
 		$scope.product = data;
+		console.log('succes detail');
+		console.log(data);
 	});
 });
