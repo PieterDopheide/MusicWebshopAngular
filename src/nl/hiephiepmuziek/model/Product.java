@@ -1,5 +1,7 @@
 package nl.hiephiepmuziek.model;
 
+import java.math.BigDecimal;
+
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -13,6 +15,8 @@ public class Product {
 	private String name;
 	private String snippet;
 	private String imageurl;
+	private BigDecimal price;
+	private int stock;
 	
 	public Product() {}
 	
@@ -52,6 +56,22 @@ public class Product {
 
 	public void setImageurl(String imageurl) {
 		this.imageurl = imageurl;
+	}
+
+	public BigDecimal getPrice() {
+		return price;
+	}
+
+	public void setPrice(BigDecimal price) {
+		this.price = price;
+	}
+
+	public int getStock() {
+		return stock;
+	}
+
+	public void setStock(int stock) {
+		this.stock = stock;
 	}
 
 }

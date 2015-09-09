@@ -63,6 +63,8 @@ public enum ProductDao {
         product.setName(rs.getString("name"));
         product.setSnippet(rs.getString("snippet"));
         product.setImageurl(rs.getString("imageurl"));
+        product.setPrice(rs.getBigDecimal("price"));
+        product.setStock(rs.getInt("stock"));
         return product;
     }
 
