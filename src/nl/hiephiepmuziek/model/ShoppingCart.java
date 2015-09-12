@@ -18,7 +18,18 @@ public enum ShoppingCart {
 	}
 	
 	public void addToCart(Product product) {
-		cart.add(product);
+		boolean add = false;
+		
+		for (Product p : cart) {
+			if (p.getId() == product.getId()) {
+				p.setQuantity(p.getQuantity() + 1);
+				add = true;
+			}
+		}
+		
+		if (!add) {
+			cart.add(product);
+		}
 	}
 	
 	public void removeFromCart(int id) {
@@ -31,17 +42,26 @@ public enum ShoppingCart {
 	}
 	
 	public int productCount() {
-		return cart.size();
+		int prodCount = 0;
+		
+		for (Product product : cart) {
+			prodCount += product.getQuantity();
+		}
+
+		return prodCount;
 	}
 	
 	public BigDecimal total() {
-		BigDecimal total = BigDecimal.ZERO;
+		BigDecimal totalCost = BigDecimal.ZERO;
+		BigDecimal itemCost = BigDecimal.ZERO;
 		
 		for (Product product : cart) {
-			total = total.add(product.getPrice());
+			itemCost = BigDecimal.ZERO; // reset itemCost
+			itemCost = product.getPrice().multiply(new BigDecimal(product.getQuantity()));
+			totalCost = totalCost.add(itemCost);
 		}
 		
-		return total;
+		return totalCost;
 	}
 
 }
