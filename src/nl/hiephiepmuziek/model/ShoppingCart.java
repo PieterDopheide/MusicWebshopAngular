@@ -21,10 +21,6 @@ public enum ShoppingCart {
 		cart.add(product);
 	}
 	
-//	public void removeFromCart(Product product) {
-//		cart.remove(product);
-//	}
-	
 	public void removeFromCart(int id) {
 		for (Product product : cart) {
 			if (product.getId() == id) {
@@ -34,12 +30,12 @@ public enum ShoppingCart {
 		}
 	}
 	
-	public int countProducts() {
+	public int productCount() {
 		return cart.size();
 	}
 	
 	public BigDecimal total() {
-		BigDecimal total = null;
+		BigDecimal total = BigDecimal.ZERO;
 		
 		for (Product product : cart) {
 			total = total.add(product.getPrice());

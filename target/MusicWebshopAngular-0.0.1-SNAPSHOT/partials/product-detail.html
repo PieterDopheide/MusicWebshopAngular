@@ -8,8 +8,10 @@
 <p>Stock: {{product.stock}}</p>
 
 <div ng-controller="CartCtrl">
-  <!-- <a ng-href="#addtocart" ng-click="add()" class="thumb"><img src="img/add-to-cart-dark.png"/></a> -->
-  <input class="thumb" type="image" src="img/add-to-cart-dark.png" value="Add" ng-click="add(product)">
-  <i class="icon-shopping-cart"></i>
-  <input class="thumb" type="image" src="img/remove-from-cart-dark.png" value="Add" ng-click="remove(product)">
+  <button type="button" class="btn btn-success" ng-click="add(product)">
+    <span class="glyphicon glyphicon-ok"></span> Add to cart
+  </button>
+  <button type="button" class="btn btn-danger" ng-click="remove(product)">
+    <span class="glyphicon glyphicon-remove"></span> Remove
+  </button>
 </div>

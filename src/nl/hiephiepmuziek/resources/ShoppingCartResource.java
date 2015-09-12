@@ -1,5 +1,6 @@
 package nl.hiephiepmuziek.resources;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,6 +18,7 @@ import javax.ws.rs.core.Request;
 import javax.ws.rs.core.UriInfo;
 
 import nl.hiephiepmuziek.model.Product;
+import nl.hiephiepmuziek.model.ProductDao;
 import nl.hiephiepmuziek.model.ShoppingCart;
 
 @Path("/shopping-cart")
@@ -36,19 +38,27 @@ public class ShoppingCartResource {
 		return products;
 	}
 	
+	@GET
+	@Path("count")
+	@Produces(MediaType.TEXT_PLAIN)
+	public String getCount() {
+		int count = ShoppingCart.instance.productCount();
+		return String.valueOf(count);
+	}
+	
+	@GET
+	@Path("total")
+	@Produces(MediaType.TEXT_PLAIN)
+	public String getTotal() {
+		BigDecimal count = ShoppingCart.instance.total();
+		return String.valueOf(count);
+	}
+	
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	public void addProduct(Product product) {
 		ShoppingCart.instance.addToCart(product);
 	}
-	
-//	@DELETE
-//	@Consumes(MediaType.APPLICATION_JSON)
-//	public void removeProduct(Product product) {
-//		System.out.println("Remove");
-//		System.out.println(product.getName());
-//		ShoppingCart.instance.removeFromCart(product);
-//	}
 	
 	@DELETE
     @Path("{id}")

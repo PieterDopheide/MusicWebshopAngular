@@ -32,24 +32,31 @@ myAppControllers.controller('ShoppingCartCtrl', function ($scope, $http) {
 		console.log('succes list');
 		console.log(data);
 	});
+	$http.get('/MusicWebshopAngular/rest/shopping-cart/count').success(function(data) {
+		$scope.cartCount = data;
+		console.log('Found ' + data + ' product(s) in cart');
+	});
+	$http.get('/MusicWebshopAngular/rest/shopping-cart/total').success(function(data) {
+		$scope.cartTotal = data;
+		console.log('Total: $' + data);
+	});
 });
 
-myAppControllers.controller('CartCtrl', function ($http, $scope) {
-	$scope.add = function () {
-//		alert('Added to cart: ' + $scope.product.name);
-		$http.post('/MusicWebshopAngular/rest/shopping-cart/', $scope.product).success(function(data) {
+myAppControllers.controller('CartCtrl', function ($http, $scope, $route) {
+	$scope.add = function (product) {
+		$http.post('/MusicWebshopAngular/rest/shopping-cart/', product).success(function(data) {
 			alert('Added to cart!');
 			console.log('Added product to cart:');
-			console.log($scope.product);
+			console.log(product);
+			$route.reload(); // reload page
 		});
 	}
-	$scope.remove = function () {
-		alert('Trying to remove: ' + $scope.product.name);
-//		$http.delete('/MusicWebshopAngular/rest/shopping-cart/').success(function(data) {
-		$http.delete('/MusicWebshopAngular/rest/shopping-cart/' + $scope.product.id).success(function(data) {
+	$scope.remove = function (product) {
+		$http.delete('/MusicWebshopAngular/rest/shopping-cart/' + product.id).success(function(data) {
 			alert('Removed from cart!');
 			console.log('Removed product from cart:');
-			console.log($scope.product);
+			console.log(product);
+			$route.reload(); // reload page
 		});
 	}
 });
