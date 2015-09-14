@@ -6,6 +6,10 @@ var myAppControllers = angular.module('myAppControllers', []);
 
 myAppControllers.controller('HeaderController', function ($scope, $location) {
 	$scope.isActive = function (viewLocation) {
+		if ($location.path().substr(1, 8) === 'products'){
+			return viewLocation === '/products';
+		}
+		
 		return viewLocation === $location.path();
 	};
 });
