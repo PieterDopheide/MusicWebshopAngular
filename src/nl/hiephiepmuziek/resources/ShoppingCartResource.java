@@ -31,12 +31,12 @@ public class ShoppingCartResource {
 	Request request;
 	
 	@Context
-    HttpServletRequest request2;
+    HttpServletRequest servletRequest;
 	
 	private ShoppingCart getShoppingCart() {
 		ShoppingCart sc = null;
 
-		HttpSession session = request2.getSession();
+		HttpSession session = servletRequest.getSession();
 
 		if (session.getAttribute("shopping-cart") == null) {
 			sc = new ShoppingCart();
