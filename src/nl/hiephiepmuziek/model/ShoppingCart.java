@@ -4,12 +4,11 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-public enum ShoppingCart {
-	instance;
+public class ShoppingCart {
 	
 	private List<Product> cart;
 	
-	private ShoppingCart() {
+	public ShoppingCart() {
 		this.cart = new ArrayList<Product>();
 	}
 
